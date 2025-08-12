@@ -56,9 +56,11 @@
                         {% endif %}
                     </td>
                     <td>{{ product.name }}</td>
-                    <td class="price-col min-price">{% if product.min_price %}{{ product.min_price }}{% else %}-{% endif %}</td>
+                    {% set show_min = product.min_price and product.min_price != product.price %}
+                    {% set show_max = product.max_price and product.max_price != product.price %}
+                    <td class="price-col min-price">{% if show_min %}{{ product.min_price }}{% else %}-{% endif %}</td>
                     <td class="price-col">{{ product.price }}</td>
-                    <td class="price-col max-price">{% if product.max_price %}{{ product.max_price }}{% else %}-{% endif %}</td>
+                    <td class="price-col max-price">{% if show_max %}{{ product.max_price }}{% else %}-{% endif %}</td>
                 </tr>
                 {% endfor %}
             </table>

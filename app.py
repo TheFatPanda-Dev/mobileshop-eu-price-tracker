@@ -68,5 +68,20 @@ def add_track():
     save_tracked(tracked)
     return redirect(url_for('index', label=label))
 
+
+# Delete only the first tracker with the selected label
+@app.route('/delete_label', methods=['POST'])
+def delete_label():
+    label = request.form.get('label')
+    if not label:
+        return redirect(url_for('index'))
+    tracked = load_tracked()
+    for i, item in enumerate(tracked):
+        if item['label'] == label:
+            del tracked[i]
+            break
+    save_tracked(tracked)
+    return redirect(url_for('index'))
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
