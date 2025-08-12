@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xiaomi 15 Price Tracker</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1><a class="main-link" href="https://www.mobileshop.eu/si/iskanje/?keyword=Xiaomi+15" target="_blank">Xiaomi 15 Price Tracker</a></h1>
+    <table>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th class="price-col">Min Price</th>
+            <th class="price-col">Current Price</th>
+            <th class="price-col">Max Price</th>
+        </tr>
+        {% for product in products %}
+        <tr {% if product.product_url %} onclick="window.open('{{ product.product_url }}', '_blank')" class="clickable-row" {% endif %}>
+            <td class="image-cell">
+                {% if product.image_url %}
+                    <img src="{{ product.image_url }}" alt="Product Image" class="product-img">
+                {% else %}
+                    No image
+                {% endif %}
+            </td>
+            <td>{{ product.name }}</td>
+            <td class="price-col min-price">{% if product.min_price %}{{ product.min_price }}{% else %}-{% endif %}</td>
+            <td class="price-col">{{ product.price }}</td>
+            <td class="price-col max-price">{% if product.max_price %}{{ product.max_price }}{% else %}-{% endif %}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

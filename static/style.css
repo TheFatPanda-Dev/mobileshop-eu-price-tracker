@@ -1,0 +1,42 @@
+/* Equal width and center text for price columns */
+.price-col {
+    width: 200px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Min price green, max price red */
+.min-price {
+    color: #1ca01c;
+}
+.max-price {
+    color: #d32f2f;
+}
+/* Highlight table row and cell on hover */
+tr:hover td {
+    background-color: #e0f0ff;
+}
+body { font-family: Arial, sans-serif; margin: 2em; font-size: 1.3em; }
+table { border-collapse: collapse; width: 100%; font-size: 1.1em; }
+th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+th { background: #f4f4f4; }
+td.image-cell { text-align: center; vertical-align: middle; }
+
+/* Main link style for h1 */
+.main-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Clickable table row */
+.clickable-row {
+    cursor: pointer;
+}
+
+/* Product image style */
+.product-img {
+    max-width: 80px;
+    max-height: 80px;
+    display: block;
+    margin: auto;
+}
