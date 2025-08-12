@@ -1,6 +1,6 @@
 # mobileshop-eu-price-tracker
 
-Track and visualize price changes for Xiaomi 15 smartphones on [mobileshop.eu](https://www.mobileshop.eu/si/iskanje/?keyword=Xiaomi+15) with a simple Flask web app.
+Track and visualize price changes for a product on [mobileshop.eu](https://www.mobileshop.eu) with a simple Flask web app.
 
 ## Features
 - Scrapes product data (name, price, image, link) from mobileshop.eu
